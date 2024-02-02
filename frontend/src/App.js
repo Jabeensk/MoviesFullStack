@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     // connect to the backend
     const fetchData = async () => {
-      const res = await fetch("http://movies-full-backend.onrender.com/");
+      const res = await fetch("http://movies-full-backend.onrender.com/api/movies");
       const data = await res.json();
       console.log(data);
       // set the data to the state movies variable
@@ -38,7 +38,7 @@ function App() {
               <NavBar />
 
               <Routes>
-                <Route path="/" element={<MainPage />} />
+                {/* <Route path="/" element={<MainPage />} /> */}
                 <Route
                   path="/movies"
                   element={<MoviesList movies={movies} />}
